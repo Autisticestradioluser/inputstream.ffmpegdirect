@@ -117,10 +117,10 @@ if(NOT WIN32)
       list(APPEND EXTRA_CONF --arch=aarch64)
       list(APPEND EXTRA_CONF --disable-filter=yadif_videotoolbox)
     endif()
-    list(APPEND EXTRA_CONF --disable-decoder=mpeg_xvmc --disable-crystalhd --enable-videotoolbox
+    list(APPEND EXTRA_CONF --disable-decoder=mpeg_xvmc --enable-videotoolbox
                            --target-os=darwin)
   elseif(CORE_SYSTEM_NAME STREQUAL osx)
-    list(APPEND EXTRA_CONF --disable-decoder=mpeg_xvmc --disable-crystalhd --enable-videotoolbox
+    list(APPEND EXTRA_CONF --disable-decoder=mpeg_xvmc --enable-videotoolbox
                            --target-os=darwin
                            --disable-securetransport)
   endif()
@@ -150,6 +150,12 @@ if(NOT WIN32)
                             COMMAND echo "Setting HAVE_CLOCK_GETTIME to 0 for darwin_embedded using sed"
                             COMMAND sed -i -- "s/HAVE_CLOCK_GETTIME 1/HAVE_CLOCK_GETTIME 0/g" ${CMAKE_CURRENT_BINARY_DIR}/ffmpeg-prefix/src/ffmpeg-build/config.h
                             DEPENDEES configure)
+    externalproject_add_step(ffmpeg
+                            DisableVVCDecoderOnAArch64
+                            COMMAND echo "Disabling AArch64 implementation of VVC (H.266) on darwin_embedded using sed"
+                            COMMAND rm ${CMAKE_SOURCE_DIR}/libavcodec/aarch64/vvc/Makefile
+                            COMMAND sed -i -- "/ff_vvc_dsp_init_aarch64/d" ${CMAKE_SOURCE_DIR}/libavcodec/vvc/dsp.c
+                            DEPENDERS configure)
   endif()
 else()
   find_package(MinGW REQUIRED)
