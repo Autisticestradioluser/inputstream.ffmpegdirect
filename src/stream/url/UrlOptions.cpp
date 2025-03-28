@@ -157,7 +157,7 @@ bool CUrlOptions::HasOption(const std::string &key) const
   return m_options.find(key) != m_options.end();
 }
 
-bool CUrlOptions::GetOption(const std::string &key, CVariant &value) const
+bool CUrlOptions::GetOption(const std::string &key, ffmpegdirect::CVariant &value) const
 {
   if (key.empty())
     return false;
