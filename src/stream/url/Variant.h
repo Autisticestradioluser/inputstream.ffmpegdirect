@@ -25,8 +25,8 @@ double str2double(const std::wstring &str, double fallback = 0.0);
 #pragma pack(8)
 #endif
 
-namespace ffmpegdirect {
-
+namespace ffmpegdirect
+{
 class CVariant
 {
 public:
