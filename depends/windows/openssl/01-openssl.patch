@@ -1,6 +1,6 @@
 --- /dev/null
 +++ b/CMakeLists.txt
-@@ -0,0 +1,107 @@
+@@ -0,0 +1,110 @@
 +cmake_minimum_required(VERSION 3.0)
 +
 +project(openssl VERSION 1.1.1 LANGUAGES C)
@@ -10,6 +10,9 @@
 +check_symbol_exists(_AMD64_ "Windows.h" _AMD64_)
 +check_symbol_exists(_ARM_ "Windows.h" _ARM_)
 +check_symbol_exists(_ARM64_ "Windows.h" _ARM64_)
++
++find_package(StrawberryPerl REQUIRED)
++set(ENV{PATH} "${STRAWBERRYPERL_PATH};$ENV{PATH}")
 +
 +if(_X86_)
 +	message(STATUS "Win32")
