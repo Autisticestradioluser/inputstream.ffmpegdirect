@@ -4,16 +4,11 @@
 # Addon Provider: phunkyfish
 msgid ""
 msgstr ""
-"Report-Msgid-Bugs-To: translations@kodi.tv\n"
-"PO-Revision-Date: 2025-01-25 20:27+0000\n"
-"Last-Translator: Heiko Berner <berner.h@gmail.com>\n"
-"Language-Team: Afrikaans (South Africa) <https://kodi.weblate.cloud/projects/kodi-add-ons-videoplayer-inputstream/inputstream-ffmpegdirect/af_za/>\n"
-"Language: af_za\n"
+"Language: prs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.9.2\n"
 
 msgctxt "Addon Summary"
 msgid "InputStream Client for FFmpeg streams (libavformat)"
@@ -27,12 +22,12 @@ msgstr ""
 #. label-category: Network
 msgctxt "#30000"
 msgid "Network"
-msgstr "Netwerk"
+msgstr ""
 
 #. label-group: Network - httpProxy
 msgctxt "#30001"
 msgid "HTTP proxy"
-msgstr "HTTP instaan"
+msgstr ""
 
 #. label: Network - useHttpProxy
 msgctxt "#30002"
@@ -42,22 +37,22 @@ msgstr ""
 #. label-option: Network - httpProxyHost
 msgctxt "#30003"
 msgid "Server"
-msgstr "Bediener"
+msgstr ""
 
 #. label-option: Network - httpProxyPort
 msgctxt "#30004"
 msgid "Port"
-msgstr "Poort"
+msgstr ""
 
 #. label-option: Network - httpProxyUser
 msgctxt "#30005"
 msgid "Username"
-msgstr "Gebruikersnaam"
+msgstr ""
 
 #. label-option: Network - httpProxyPassword
 msgctxt "#30006"
 msgid "Password"
-msgstr "Wagwoord"
+msgstr ""
 
 #. label-group: Network - Bandwidth
 msgctxt "#30007"
@@ -69,17 +64,17 @@ msgctxt "#30008"
 msgid "Stream selection bandwidth"
 msgstr ""
 
-# empty strings from id 30009 to 30019
+#empty strings from id 30009 to 30019
 #. label-category: timeshift
 #. label-group: Timeshift - Timeshift
 msgctxt "#30020"
 msgid "Timeshift"
-msgstr "Tydskuif"
+msgstr ""
 
 #. label: Timeshift - timeshiftBufferPath
 msgctxt "#30021"
 msgid "Timeshift buffer path"
-msgstr "Tydskuif buffer pad"
+msgstr ""
 
 #. label: Timeshift - timeshiftEnableLimit
 msgctxt "#30022"
@@ -94,13 +89,13 @@ msgstr ""
 #. format-label: Timeshift - timeshiftOnDiskLength
 msgctxt "#30024"
 msgid "{0:.2f} hours"
-msgstr "{0:.2f} ure"
+msgstr ""
 
-# empty strings from id 30025 to 30039
+#empty strings from id 30025 to 30039
 #. label-category: advanced
 msgctxt "#30040"
 msgid "Advanced"
-msgstr "Gevorderd"
+msgstr ""
 
 #. label-category: advanced
 #. label-group: Advanced - Logging
@@ -133,7 +128,7 @@ msgctxt "#30046"
 msgid "For catchup streams report stream is not realtime"
 msgstr ""
 
-# empty strings from id 30047 to 30599
+#empty strings from id 30047 to 30599
 #. ############
 #. help info #
 #. ############
@@ -151,29 +146,29 @@ msgstr ""
 #. help: Network - httpProxyHost
 msgctxt "#30602"
 msgid "Configure the proxy server address."
-msgstr "Stel die instaan bediener adres op."
+msgstr ""
 
 #. help: Network- httpProxyPort
 msgctxt "#30603"
 msgid "Configure the proxy server port."
-msgstr "Stel die instaan bediener poort op."
+msgstr ""
 
 #. help: Network - httpProxyUser
 msgctxt "#30604"
 msgid "Configure the proxy server username."
-msgstr "Stel die instaan bediener gebruikersnaam op."
+msgstr ""
 
 #. help: Network - httpProxyPassword
 msgctxt "#30605"
 msgid "Configure the proxy server password."
-msgstr "Stel die instaan bediener wagwoord op."
+msgstr ""
 
 #. help: Network - streamBandwidth
 msgctxt "#30606"
 msgid "Use this value as a maximum when selecting which HLS stream to use."
 msgstr ""
 
-# empty strings from id 30607 to 30619
+#empty strings from id 30607 to 30619
 #. help info - Timeshift
 #. help-category: timeshift
 msgctxt "#30620"
@@ -195,12 +190,12 @@ msgctxt "#30623"
 msgid "The length of the timeshift buffer in hours. Once the value is reached the older buffer data will be deleted to ensure the limit is not breached. Note that the storage for your device should be sufficient to allow the buffer to grow to it's maximum length (otherwise it's equivalent to disabling this option). A good heuristic for video size is 130MB per minute of 1080p video and 375MB per minute of 4K video."
 msgstr ""
 
-# empty strings from id 30624 to 30639
+#empty strings from id 30624 to 30639
 #. help info - Advanced
 #. help-category: advanced
 msgctxt "#30640"
 msgid "Advanced settings"
-msgstr "Gevorderde instellings"
+msgstr ""
 
 #. help: Advanced - allowFFmpegLogging
 msgctxt "#30641"
