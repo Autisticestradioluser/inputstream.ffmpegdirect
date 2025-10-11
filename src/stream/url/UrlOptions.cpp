@@ -13,6 +13,7 @@
 #include <kodi/tools/StringUtils.h>
 
 using namespace kodi::tools;
+using namespace ffmpegdirect;
 
 CUrlOptions::CUrlOptions() = default;
 
