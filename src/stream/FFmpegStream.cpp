@@ -1515,7 +1515,7 @@ bool FFmpegStream::SeekTime(double time, bool backwards, double* startpts)
 
 FFmpegExtraData FFmpegStream::GetPacketExtradata(const AVPacket* pkt, const AVCodecParameters* codecPar)
 {
-  constexpr int FF_MAX_EXTRADATA_SIZE = ((1 << 28) - AV_INPUT_BUFFER_PADDING_SIZE);
+  constexpr int AV_MAX_EXTRADATA_SIZE = ((1 << 28) - AV_INPUT_BUFFER_PADDING_SIZE);
 
   if (!pkt)
     return {};
@@ -1608,7 +1608,7 @@ FFmpegExtraData FFmpegStream::GetPacketExtradata(const AVPacket* pkt, const AVCo
     size_t retExtraDataSize = 0;
     uint8_t* retExtraData =
         av_packet_get_side_data(pktRef, AV_PKT_DATA_NEW_EXTRADATA, &retExtraDataSize);
-    if (retExtraData && retExtraDataSize > 0 && retExtraDataSize < FF_MAX_EXTRADATA_SIZE)
+    if (retExtraData && retExtraDataSize > 0 && retExtraDataSize < AV_MAX_EXTRADATA_SIZE)
     {
       try
       {
@@ -2260,9 +2260,9 @@ std::string FFmpegStream::GetStreamCodecName(int iStreamId)
     /* use profile to determine the DTS type */
     if (stream->codec == AV_CODEC_ID_DTS)
     {
-      if (stream->profile == FF_PROFILE_DTS_HD_MA)
+      if (stream->profile == AV_PROFILE_DTS_HD_MA)
         strName = "dtshd_ma";
-      else if (stream->profile == FF_PROFILE_DTS_HD_HRA)
+      else if (stream->profile == AV_PROFILE_DTS_HD_HRA)
         strName = "dtshd_hra";
       else
         strName = "dca";

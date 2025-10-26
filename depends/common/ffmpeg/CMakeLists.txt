@@ -20,9 +20,9 @@ list(APPEND STANDARD_CONF --extra-version=kodi-${FFMPEG_VER}
                           --disable-ffplay
                           --disable-ffmpeg
                           --disable-ffprobe
+                          --disable-muxer=whip
                           --enable-gpl
                           --enable-runtime-cpudetect
-                          --enable-postproc
                           --enable-muxer=spdif
                           --enable-muxer=adts
                           --enable-muxer=asf
