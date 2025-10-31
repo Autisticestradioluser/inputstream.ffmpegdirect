@@ -12,6 +12,8 @@
 #include <map>
 #include <string>
 
+namespace ffmpegdirect
+{
 class CUrlOptions
 {
 public:
@@ -43,3 +45,4 @@ protected:
   UrlOptions m_options;
   std::string m_strLead;
 };
+} // namespace ffmpegdirect
