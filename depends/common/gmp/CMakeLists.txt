@@ -27,6 +27,7 @@ if(CORE_SYSTEM_NAME STREQUAL osx OR
 
   externalproject_add(gmp
                       SOURCE_DIR ${CMAKE_SOURCE_DIR}
+                      PATCH_COMMAND autoreconf -vif
                       CONFIGURE_COMMAND
                           bash --login -c
                           "./configure \
