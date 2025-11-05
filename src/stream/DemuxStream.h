@@ -95,6 +95,7 @@ public:
 
   virtual std::string GetStreamName();
   virtual bool GetInformation(kodi::addon::InputstreamInfo& info);
+  virtual STREAMCODEC_PROFILE ConvertToInputStreamProfile(AVCodecID codec, int profile);
 
   int uniqueId; // unique stream id
   int dvdNavId;
