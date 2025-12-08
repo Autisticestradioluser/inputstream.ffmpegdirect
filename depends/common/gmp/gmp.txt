@@ -1,1 +1,1 @@
-gmp https://ftpmirror.gnu.org/gmp/gmp-6.3.0.tar.xz
+gmp https://ftp.gnu.org/gnu/gmp/gmp-6.3.0.tar.xz
