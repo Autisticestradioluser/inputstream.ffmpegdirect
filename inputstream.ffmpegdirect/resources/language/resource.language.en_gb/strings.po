@@ -240,5 +240,5 @@ msgstr ""
 
 #. help: Advanced - disableStrictHLSfileExtensionCheck
 msgctxt "#30646"
-msgid "Allows playing HLS streams without file extension or with unsuported file extension. This lowers the security requirements in ffmpeg."
+msgid "Allows playing HLS streams without file extension or with unsupported file extension. This lowers the security requirements in ffmpeg."
 msgstr ""
