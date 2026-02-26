@@ -5,15 +5,15 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@kodi.tv\n"
-"PO-Revision-Date: 2026-01-19 00:55+0000\n"
-"Last-Translator: taxigps <taxigps@sina.com>\n"
+"PO-Revision-Date: 2026-02-26 13:53+0000\n"
+"Last-Translator: wabisabi926 <wabisabi926@foxmail.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://kodi.weblate.cloud/projects/kodi-add-ons-videoplayer-inputstream/inputstream-ffmpegdirect/zh_Hans/>\n"
 "Language: zh_cn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.15.2\n"
+"X-Generator: Weblate 5.16.1\n"
 
 msgctxt "Addon Summary"
 msgid "InputStream Client for FFmpeg streams (libavformat)"
@@ -133,6 +133,11 @@ msgctxt "#30046"
 msgid "For catchup streams report stream is not realtime"
 msgstr "报告回放流为非实时的"
 
+#. help: Advanced - disableStrictHLSfileExtensionCheck
+msgctxt "#30047"
+msgid "Disable strict HLS file extension check"
+msgstr "关闭严格的 HLS 文件扩展名检查"
+
 # empty strings from id 30047 to 30599
 #. ############
 #. help info #
@@ -226,3 +231,12 @@ msgstr "启用此选项后，使用 FFmpeg 可以更快地打开具有清单文�
 msgctxt "#30645"
 msgid "For certain catchup streams such as HLS reporting that a live stream is not live can improve stream open times. If testing this option works for a catchup stream/provider, then add a [I]\"#KODIPROP=inputstream.ffmpegdirect.is_realtime_stream=false\"[/I] to the M3U entry in question. This setting should not be left enabled for all streams."
 msgstr "对于类似 HLS 的捕获流，报告实时流不是实时可以缩短流打开时间。如果测试此选项适用于捕获流/提供程序，则将[I]“#KODIPROP=inputstream.ffmpegdirect.is_realtime_stream=false”[/I]添加到相关的M3U条目中。不应为所有流启用此设置。"
+
+#. help: Advanced - disableStrictHLSfileExtensionCheck
+msgctxt "#30646"
+msgid "Allows playing HLS streams without file extension or with unsupported file extension. This lowers the security requirements in ffmpeg."
+msgstr ""
+
+#~ msgctxt "#30646"
+#~ msgid "Allows playing HLS streams without file extension or with unsuported file extension. This lowers the security requirements in ffmpeg."
+#~ msgstr "允许播放无文件扩展名或带有不支持扩展名的 HLS 流。此操作会降低 ffmpeg 的安全要求。"
