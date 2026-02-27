@@ -133,6 +133,11 @@ msgctxt "#30046"
 msgid "For catchup streams report stream is not realtime"
 msgstr "Para transmisiones de ponerse al día reportar si la transmisión no es en tiempo real"
 
+#. help: Advanced - disableStrictHLSfileExtensionCheck
+msgctxt "#30047"
+msgid "Disable strict HLS file extension check"
+msgstr ""
+
 # empty strings from id 30047 to 30599
 #. ############
 #. help info #
@@ -226,3 +231,8 @@ msgstr "Si se activa esta opción, las transmisiones que tengan un archivo de ma
 msgctxt "#30645"
 msgid "For certain catchup streams such as HLS reporting that a live stream is not live can improve stream open times. If testing this option works for a catchup stream/provider, then add a [I]\"#KODIPROP=inputstream.ffmpegdirect.is_realtime_stream=false\"[/I] to the M3U entry in question. This setting should not be left enabled for all streams."
 msgstr "Para ciertas transmisiones, como HLS, que reporten que una transmisión en vivo no es realmente en vivo, esta opción puede mejorar los tiempos de apertura. Si esta opción funciona bien con una transmisión/proveedor, agrega una entrada [I]\"#KODIPROP=inputstream.ffmpegdirect.is_realtime_stream=false\"[/I] al M3U en cuestión. Esta opción no debería dejarse activada para todas las transmisiones."
+
+#. help: Advanced - disableStrictHLSfileExtensionCheck
+msgctxt "#30646"
+msgid "Allows playing HLS streams without file extension or with unsupported file extension. This lowers the security requirements in ffmpeg."
+msgstr ""
