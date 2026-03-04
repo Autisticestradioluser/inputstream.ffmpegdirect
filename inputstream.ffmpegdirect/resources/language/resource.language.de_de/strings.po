@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@kodi.tv\n"
-"PO-Revision-Date: 2026-02-24 09:27+0000\n"
+"PO-Revision-Date: 2026-03-04 12:13+0000\n"
 "Last-Translator: Kai Sommerfeld <ksooo@users.noreply.kodi.weblate.cloud>\n"
 "Language-Team: German <https://kodi.weblate.cloud/projects/kodi-add-ons-videoplayer-inputstream/inputstream-ffmpegdirect/de_de/>\n"
 "Language: de_de\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.16\n"
+"X-Generator: Weblate 5.16.1\n"
 
 msgctxt "Addon Summary"
 msgid "InputStream Client for FFmpeg streams (libavformat)"
@@ -235,7 +235,7 @@ msgstr "Bei bestimmten „Catch Up“-Streams, wie HLS, kann die „Behauptung�
 #. help: Advanced - disableStrictHLSfileExtensionCheck
 msgctxt "#30646"
 msgid "Allows playing HLS streams without file extension or with unsupported file extension. This lowers the security requirements in ffmpeg."
-msgstr ""
+msgstr "Erlaubt die wiedergabe von HLS-stream ohne oder mit nicht unterstützter Dateierweiterung. Verringert die Sicherheitsanforderungen von ffmpeg."
 
 #~ msgctxt "#30646"
 #~ msgid "Allows playing HLS streams without file extension or with unsuported file extension. This lowers the security requirements in ffmpeg."

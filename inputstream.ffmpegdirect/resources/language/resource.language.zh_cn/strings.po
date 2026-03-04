@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: translations@kodi.tv\n"
-"PO-Revision-Date: 2026-02-26 13:53+0000\n"
+"PO-Revision-Date: 2026-03-04 12:13+0000\n"
 "Last-Translator: wabisabi926 <wabisabi926@foxmail.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://kodi.weblate.cloud/projects/kodi-add-ons-videoplayer-inputstream/inputstream-ffmpegdirect/zh_Hans/>\n"
 "Language: zh_cn\n"
@@ -235,7 +235,7 @@ msgstr "对于类似 HLS 的捕获流，报告实时流不是实时可以缩短�
 #. help: Advanced - disableStrictHLSfileExtensionCheck
 msgctxt "#30646"
 msgid "Allows playing HLS streams without file extension or with unsupported file extension. This lowers the security requirements in ffmpeg."
-msgstr ""
+msgstr "允许播放无文件扩展名或不支持的文件扩展名的 HLS 流媒体。此操作会降低 ffmpeg 中的安全要求。"
 
 #~ msgctxt "#30646"
 #~ msgid "Allows playing HLS streams without file extension or with unsuported file extension. This lowers the security requirements in ffmpeg."
