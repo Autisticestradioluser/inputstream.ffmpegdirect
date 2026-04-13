@@ -1,3 +1,6 @@
+v22.2.4
+- Release
+
 v22.2.3
 - CI: Remove Win32-UWP from azure-pipelines.yml
 - gmp: perform autoreconf command also on non-OSX platforms
