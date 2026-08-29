@@ -30,7 +30,11 @@ namespace ffmpegdirect
   struct Properties
   {
     std::string m_programProperty;
-    bool m_isRealTimeStream;
+    // Must be initialized: this is only assigned when the is_realtime_stream
+    // property is present. Left uninitialized it reads indeterminate memory and
+    // silently disables stream analysis (m_streaminfo) for streams that omit
+    // the property.
+    bool m_isRealTimeStream = false;
     StreamMode m_streamMode = StreamMode::NONE;
     OpenMode m_openMode = OpenMode::DEFAULT;
     std::string m_manifestType;

@@ -1,3 +1,23 @@
+v22.2.7.20260829
+- Add cmake/optimization.cmake applied via CMAKE_USER_MAKE_RULES_OVERRIDE
+  for unconditional -O3 -DNDEBUG -ffunction-sections, --gc-sections,
+  --icf=all and -fvisibility=hidden (reduces .so from 88MB to 18MB).
+- Build script: ARMv8-A tuning flags for v8a32 target (-march=armv8-a+crc+crypto,
+  -mfpu=neon-fp-armv8, -mfloat-abi=softfp, -mtune=cortex-a53).
+- Aggressive strip (--strip-all) and zip compression (zip -9) for v8a32 packages.
+
+v22.2.7.20260827
+- Fix uninitialized Properties::m_isRealTimeStream: when the is_realtime_stream
+  property was absent (now the common case for live TS), stream analysis
+  (m_streaminfo) depended on indeterminate memory and was observed disabled,
+  producing incomplete codec parameters on H.264 TS.
+- Forward rw_timeout, reconnect_on_network_error and reconnect_on_http_error
+  from URL protocol options to FFmpeg's option dict (extended whitelist).
+- Treat all mpegts content like HEVC: run full avformat_find_stream_info on
+  first open and keep the analyzed context instead of short-analyzing then
+  reopening without analysis. Fixes MediaCodec "null size" failures, software
+  decoder fallbacks, garbage PTS and demuxer churn on H.264 TS streams.
+
 v22.2.5
 - Fix catchup stream backward skip on EOF near live edge
 - Fix 6s close delay on timeshift HLS streams

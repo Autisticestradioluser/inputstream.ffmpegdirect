@@ -93,49 +93,49 @@ if(NOT ENABLE_INTERNAL_FFMPEG OR KODI_DEPENDSBUILD)
   find_library(FFMPEG_LIBAVCODEC
                NAMES avcodec libavcodec
                PATH_SUFFIXES ffmpeg/libavcodec
-               PATHS ${PC_FFMPEG_libavcodec_LIBDIR}
+               PATHS ${PC_FFMPEG_LIBRARY_DIRS}
                NO_DEFAULT_PATH)
   find_library(FFMPEG_LIBAVCODEC NAMES avcodec libavcodec PATH_SUFFIXES ffmpeg/libavcodec)
 
   find_library(FFMPEG_LIBAVFILTER
                NAMES avfilter libavfilter
                PATH_SUFFIXES ffmpeg/libavfilter
-               PATHS ${PC_FFMPEG_libavfilter_LIBDIR}
+               PATHS ${PC_FFMPEG_LIBRARY_DIRS}
                NO_DEFAULT_PATH)
   find_library(FFMPEG_LIBAVFILTER NAMES avfilter libavfilter PATH_SUFFIXES ffmpeg/libavfilter)
 
   find_library(FFMPEG_LIBAVFORMAT
                NAMES avformat libavformat
                PATH_SUFFIXES ffmpeg/libavformat
-               PATHS ${PC_FFMPEG_libavformat_LIBDIR}
+               PATHS ${PC_FFMPEG_LIBRARY_DIRS}
                NO_DEFAULT_PATH)
   find_library(FFMPEG_LIBAVFORMAT NAMES avformat libavformat PATH_SUFFIXES ffmpeg/libavformat)
 
   find_library(FFMPEG_LIBAVUTIL
                NAMES avutil libavutil
                PATH_SUFFIXES ffmpeg/libavutil
-               PATHS ${PC_FFMPEG_libavutil_LIBDIR}
+               PATHS ${PC_FFMPEG_LIBRARY_DIRS}
                NO_DEFAULT_PATH)
   find_library(FFMPEG_LIBAVUTIL NAMES avutil libavutil PATH_SUFFIXES ffmpeg/libavutil)
 
   find_library(FFMPEG_LIBSWSCALE
                NAMES swscale libswscale
                PATH_SUFFIXES ffmpeg/libswscale
-               PATHS ${PC_FFMPEG_libswscale_LIBDIR}
+               PATHS ${PC_FFMPEG_LIBRARY_DIRS}
                NO_DEFAULT_PATH)
   find_library(FFMPEG_LIBSWSCALE NAMES swscale libswscale PATH_SUFFIXES ffmpeg/libswscale)
 
   find_library(FFMPEG_LIBSWRESAMPLE
                NAMES swresample libswresample
                PATH_SUFFIXES ffmpeg/libswresample
-               PATHS ${PC_FFMPEG_libswresample_LIBDIR}
+               PATHS ${PC_FFMPEG_LIBRARY_DIRS}
                NO_DEFAULT_PATH)
   find_library(FFMPEG_LIBSWRESAMPLE NAMES NAMES swresample libswresample PATH_SUFFIXES ffmpeg/libswresample)
 
   find_library(FFMPEG_LIBPOSTPROC
                NAMES postproc libpostproc
                PATH_SUFFIXES ffmpeg/libpostproc
-               PATHS ${PC_FFMPEG_libpostproc_LIBDIR}
+               PATHS ${PC_FFMPEG_LIBRARY_DIRS}
                NO_DEFAULT_PATH)
   find_library(FFMPEG_LIBPOSTPROC NAMES postproc libpostproc PATH_SUFFIXES ffmpeg/libpostproc)
 

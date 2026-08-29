@@ -741,19 +741,18 @@ bool FFmpegStream::Open(bool fileinfo)
                         "empty. Please report this bug.");
   }
 
-  // don't re-open mpegts streams with hevc encoding as the params are not correctly detected again
-  if (iformat && (strcmp(iformat->name, "mpegts") == 0) && !fileinfo && !isBluray &&
-      m_pFormatContext->nb_streams > 0 && m_pFormatContext->streams != nullptr &&
-      m_pFormatContext->streams[0]->codecpar->codec_id != AV_CODEC_ID_HEVC)
-  {
-    av_opt_set_int(m_pFormatContext, "analyzeduration", 500000, 0);
-    m_checkTransportStream = true;
-    skipCreateStreams = true;
-  }
-  else if (!iformat || ((strcmp(iformat->name, "mpegts") != 0) ||
-                        ((strcmp(iformat->name, "mpegts") == 0) &&
-                         m_pFormatContext->nb_streams > 0 && m_pFormatContext->streams != nullptr &&
-                         m_pFormatContext->streams[0]->codecpar->codec_id == AV_CODEC_ID_HEVC)))
+  // Treat all mpegts content the way HEVC mpegts was always handled: force stream
+  // analysis and keep the analyzed context (no short-analyze + dispose-and-reopen).
+  // Non-HEVC mpegts (H.264 etc.) previously analyzed for only 500000us and then
+  // reopened via m_reopen without any analysis at all, so playback started from a
+  // context with incomplete codec parameters — no resolution/pixel format, 0 audio
+  // channels. That produced MediaCodec "null size, cannot handle" failures,
+  // software-decoder fallbacks, garbage PTS (-1600s audio sync errors) and demuxer
+  // churn ("profile changed" reopen loops) that stalled playback.
+  if (!iformat || ((strcmp(iformat->name, "mpegts") != 0) ||
+                   ((strcmp(iformat->name, "mpegts") == 0) &&
+                    m_pFormatContext->nb_streams > 0 && m_pFormatContext->streams != nullptr &&
+                    m_pFormatContext->streams[0]->codecpar->codec_id == AV_CODEC_ID_HEVC)))
   {
     m_streaminfo = true;
   }
@@ -2308,8 +2307,14 @@ AVDictionary* FFmpegStream::GetFFMpegOptionsFromInput()
       const std::string &value = it->second;
 
       // set any of these ffmpeg options
+      // reconnect_on_network_error is a bool; reconnect_on_http_error takes a
+      // comma-separated list of http status codes/patterns (e.g. "4xx,5xx");
+      // rw_timeout is a URLContext-level option (microseconds) that breaks reads
+      // blocked on a silent socket — without it nothing can interrupt recv().
       if (name == "seekable" || name == "reconnect" || name == "reconnect_at_eof" ||
           name == "reconnect_streamed" || name == "reconnect_delay_max" ||
+          name == "rw_timeout" || name == "reconnect_on_network_error" ||
+          name == "reconnect_on_http_error" ||
           name == "icy" || name == "icy_metadata_headers" || name == "icy_metadata_packet" || name == "cenc_decryption_key")
       {
         Log(LOGLEVEL_DEBUG,

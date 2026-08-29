@@ -10,6 +10,23 @@ if(WIN32)
   find_package(OpenSSL REQUIRED)
 endif()
 find_package(Kodi REQUIRED)
+
+# The superbuild's -DCMAKE_PREFIX_PATH gets clobbered by the toolchain (list
+# semicolons split the -D argument), leaving only the NDK dir — so point the
+# dependency searches at the depends tree explicitly via ADDON_DEPENDS_PATH,
+# which HandleDepends forwards reliably.
+if(ADDON_DEPENDS_PATH)
+  list(APPEND CMAKE_PREFIX_PATH ${ADDON_DEPENDS_PATH})
+  list(APPEND CMAKE_INCLUDE_PATH ${ADDON_DEPENDS_PATH}/include)
+  list(APPEND CMAKE_LIBRARY_PATH ${ADDON_DEPENDS_PATH}/lib)
+  # The NDK toolchain sets FIND_ROOT_PATH_MODE=ONLY, which re-roots every
+  # find_path/find_library search under the sysroot and hides the host-side
+  # depends tree entirely. Allow searching outside it.
+  set(CMAKE_FIND_ROOT_PATH "${ADDON_DEPENDS_PATH};${CMAKE_FIND_ROOT_PATH}")
+  set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY BOTH)
+  set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE BOTH)
+endif()
+
 find_package(FFMPEG REQUIRED)
 find_package(ZLIB REQUIRED)
 find_package(BZip2 REQUIRED)

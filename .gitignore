@@ -1,5 +1,6 @@
 # build artifacts
 build/
+build-android-*/
 inputstream.*/addon.xml
 
 # Debian build files

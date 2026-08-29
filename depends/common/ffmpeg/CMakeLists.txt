@@ -101,6 +101,17 @@ if(NOT WIN32)
       endif()
     endif()
   elseif(CORE_SYSTEM_NAME STREQUAL android)
+    # NDK clang defaults to the HOST triple when --target is absent. CMake's
+    # toolchain injects --target per-compile, so CMAKE_C_FLAGS never carry it —
+    # but ffmpeg's autoconf configure compiles/links probes directly, producing
+    # x86-64 objects that fail to link against the arm depends libraries.
+    if(ANDROID_ABI STREQUAL arm64-v8a)
+      list(APPEND EXTRA_CONF --extra-cflags=--target=aarch64-none-linux-android21
+                             --extra-ldflags=--target=aarch64-none-linux-android21)
+    elseif(ANDROID_ABI STREQUAL armeabi-v7a)
+      list(APPEND EXTRA_CONF --extra-cflags=--target=armv7a-none-linux-androideabi21
+                             --extra-ldflags=--target=armv7a-none-linux-androideabi21)
+    endif()
     if(CPU MATCHES arm64)
       list(APPEND EXTRA_CONF --cpu=cortex-a53 --arch=aarch64)
     elseif(CPU MATCHES arm)
