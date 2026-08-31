@@ -5,7 +5,7 @@
 #
 # The NDK toolchain sets CMAKE_C_FLAGS/CMAKE_CXX_FLAGS to include -g (debug
 # info) and CMAKE_C_FLAGS_RELEASE/CMAKE_CXX_FLAGS_RELEASE are empty by default.
-# This override forces -O3 -DNDEBUG and adds --gc-sections to the linker flags.
+# This override forces -O2 -DNDEBUG and adds --gc-sections to the linker flags.
 #
 # NOTE: This file is processed during project()/enable_language(), which runs
 # BEFORE CMAKE_BUILD_TYPE is guaranteed to be set in all generator paths.
@@ -13,10 +13,10 @@
 
 string(REGEX REPLACE "-g" "" CMAKE_C_FLAGS "${CMAKE_C_FLAGS}")
 string(REGEX REPLACE "-g" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O3 -DNDEBUG -ffunction-sections -fdata-sections")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -DNDEBUG -ffunction-sections -fdata-sections")
-set(CMAKE_C_FLAGS_RELEASE "-O3 -DNDEBUG -ffunction-sections -fdata-sections")
-set(CMAKE_CXX_FLAGS_RELEASE "-O3 -DNDEBUG -ffunction-sections -fdata-sections")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O2 -DNDEBUG -ffunction-sections -fdata-sections")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O2 -DNDEBUG -ffunction-sections -fdata-sections")
+set(CMAKE_C_FLAGS_RELEASE "-O2 -DNDEBUG -ffunction-sections -fdata-sections")
+set(CMAKE_CXX_FLAGS_RELEASE "-O2 -DNDEBUG -ffunction-sections -fdata-sections")
 
 # Linker flags: add --gc-sections to drop unused code and --icf=all for
 # identical code folding (merges duplicate functions/data across translation units)

@@ -135,8 +135,12 @@ build_one() {
   # always gets a fresh addon re-checkout/rebuild. Dependency stamps (under
   # build/<dep>/src/<dep>-stamp/) are untouched — they survive and prevent
   # re-downloads. The download dir (build/download/) is also untouched thanks
-  # to the preseed above.
-  rm -rf "$build_dir/$ADDON_ID-prefix" "$build_dir/.install"
+  # to the preseed above. The addon's own build dir ($ADDON_ID-prefix/src/$ADDON_ID-build/)
+  # must also be wiped — CMake caches compiled objects in CMakeFiles/ and won't
+  # recompile if stamps are fresh, even when CMAKE_USER_MAKE_RULES_OVERRIDE
+  # (optimization.cmake) flags have changed.
+  rm -rf "$build_dir/$ADDON_ID-prefix" "$build_dir/.install" \
+    "$build_dir/$ADDON_ID-prefix/src/$ADDON_ID-build"
   cmake --build "$build_dir" -j"$(nproc)" > /dev/null
 
   # Stage from THIS arch's private .install tree, never from any shared output
